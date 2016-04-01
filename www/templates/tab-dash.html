@@ -1,0 +1,46 @@
+<ion-view view-title="Simulador">
+    <ion-content class="padding">
+        <form action="">
+            <h2>Simulador de prestamos</h2>
+            <div class="list">
+                <label class="item item-input item-stacked-label" for="">
+                    <i class="icon ion-cash placeholder-icon"></i>
+                    <span class="input-label">Monto de dinero</span>
+                    <input type="number" ng-model="vm.loan.cash" ng-change="vm.loan.calculate()" placeholder="Digite el monto de dinero a prestar">
+                </label>
+                <label class="item item-input item-stacked-label" for="">
+                    <i class="icon placeholder-icon">%</i>
+                    <span class="input-label">Interes</span>
+                    <input type="number" ng-model="vm.loan.profit" ng-change="vm.loan.calculate()" ng-init="vm.loan.profit=7">
+                </label>
+                <label class="item item-input item-stacked-label" for="">
+                    <i class="icon ion-calendar placeholder-icon"></i>
+                    <span class="input-label">Cantidad de cuotas</span>
+                    <input type="number" ng-model="vm.loan.fee" ng-change="vm.loan.calculate()" ng-init="vm.loan.fee=12">
+                </label>
+                <label class="item item-input item-stacked-label" for="">
+                    <i class="icon ion-cash placeholder-icon"></i>
+                    <span class="input-label">Valor a pagar</span>
+                    <input type="number" ng-model="vm.loan.sum" disabled placeholder="Digite el monto de dinero a prestar">
+                </label>
+                <label class="item item-input item-stacked-label" for="">
+                    <i class="icon ion-cash placeholder-icon"></i>
+                    <span class="input-label">Valor de cada cuota</span>
+                    <input type="number" ng-model="vm.loan.sumfee" disabled placeholder="Digite el monto de dinero a prestar">
+                </label>
+                <label ng-show="filter.profit" class="item item-input item-stacked-label" for="">
+                    <i class="icon ion-cash placeholder-icon"></i>
+                    <span class="input-label">Ganancia</span>
+                    <input type="number" ng-model="vm.loan.totalprofit" disabled>
+                </label>
+                <ion-checkbox ng-model="filter.profit">Ver Ganancia</ion-checkbox>
+                <br/>
+                <div class="button-bar">
+                    <a class="button button-balanced">Guardar</a>
+                    <a class="button button-calm">Limpiar</a>
+                </div>
+            </div>
+
+        </form>
+    </ion-content>
+</ion-view>
